@@ -1,0 +1,100 @@
+--------------------------------------------------------------------------
+[[15992,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: 51b405a11e1a
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+04/11/2022 06:23:34 - INFO - __main__ -   device: cuda:0 n_gpu: 1, rank: 0, 16-bits training: True
+04/11/2022 06:23:34 - INFO - __main__ -   Loading Train Dataset ['/txt/vqa_train.db', '/txt/vqa_trainval.db', '/txt/vqa_vg.db'], ['/img/coco_train2014/', '/img/coco_val2014', '/img/vg/']
+04/11/2022 06:23:37 - INFO - pytorch_pretrained_bert.tokenization -   loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-vocab.txt from cache at /root/.pytorch_pretrained_bert/5e8a2b4893d13790ed4150ca1906be5f7a03d6c4ddf62296c383f6db42814db2.e13dbb970cb325137104fb2e5f36fe865f27746c6b526f6352861b1980eb80b1
+04/11/2022 06:23:38 - INFO - pytorch_pretrained_bert.tokenization -   loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-vocab.txt from cache at /root/.pytorch_pretrained_bert/5e8a2b4893d13790ed4150ca1906be5f7a03d6c4ddf62296c383f6db42814db2.e13dbb970cb325137104fb2e5f36fe865f27746c6b526f6352861b1980eb80b1
+04/11/2022 06:23:41 - INFO - pytorch_pretrained_bert.tokenization -   loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-vocab.txt from cache at /root/.pytorch_pretrained_bert/5e8a2b4893d13790ed4150ca1906be5f7a03d6c4ddf62296c383f6db42814db2.e13dbb970cb325137104fb2e5f36fe865f27746c6b526f6352861b1980eb80b1
+04/11/2022 06:23:43 - INFO - __main__ -   Loading Train Dataset /txt/vqa_devval.db, /img/coco_val2014/
+04/11/2022 06:23:45 - INFO - pytorch_pretrained_bert.tokenization -   loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-vocab.txt from cache at /root/.pytorch_pretrained_bert/5e8a2b4893d13790ed4150ca1906be5f7a03d6c4ddf62296c383f6db42814db2.e13dbb970cb325137104fb2e5f36fe865f27746c6b526f6352861b1980eb80b1
+04/11/2022 06:23:45 - INFO - model.model -   Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+04/11/2022 06:23:47 - INFO - model.model -   Weights of UniterForVisualQuestionAnswering not initialized from pretrained model: ['uniter.soft_prompt', 'vqa_output.0.weight', 'vqa_output.0.bias', 'vqa_output.2.weight', 'vqa_output.2.bias', 'vqa_output.3.weight', 'vqa_output.3.bias', 'mask_pooler.0.weight', 'mask_pooler.0.bias']
+04/11/2022 06:23:47 - INFO - model.model -   Weights from pretrained model not used in UniterForVisualQuestionAnswering: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'feat_regress.weight', 'feat_regress.bias', 'feat_regress.net.0.weight', 'feat_regress.net.0.bias', 'feat_regress.net.2.weight', 'feat_regress.net.2.bias', 'region_classifier.net.0.weight', 'region_classifier.net.0.bias', 'region_classifier.net.2.weight', 'region_classifier.net.2.bias', 'region_classifier.net.3.weight', 'region_classifier.net.3.bias', 'itm_output.weight', 'itm_output.bias']
+04/11/2022 06:23:47 - INFO - __main__ -   Waiting on git info....
+04/11/2022 06:23:47 - INFO - __main__ -   Git branch: master
+04/11/2022 06:23:48 - INFO - __main__ -   Git SHA: 1dbfa62bb8ddb1f2b11d20775ce324c5e45a3ab4
+  0%|          | 0/20000 [00:00<?, ?it/s]04/11/2022 06:23:48 - INFO - __main__ -   ***** Running training with 1 GPUs *****
+04/11/2022 06:23:48 - INFO - __main__ -     Num examples = 1102958
+04/11/2022 06:23:48 - INFO - __main__ -     Batch size = 5120
+04/11/2022 06:23:48 - INFO - __main__ -     Accumulate steps = 5
+04/11/2022 06:23:48 - INFO - __main__ -     Num steps = 20000
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+raw_txt:torch.Size([56, 38, 768])
+prompted_txt:torch.Size([56, 42, 768])
+img:torch.Size([56, 45, 768])
+concated:torch.Size([56, 87, 768])
+Traceback (most recent call last):
+  File "train_vqa.py", line 401, in <module>
+    main(args)
+  File "train_vqa.py", line 187, in main
+    loss,_ = model(batch, compute_loss=True)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/apex/amp/_initialize.py", line 196, in new_fwd
+    output = old_fwd(*applier(args, input_caster),
+  File "/src/model/vqa.py", line 44, in forward
+    sequence_output, attention_probs = self.uniter(input_ids, position_ids,
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/src/model/model.py", line 376, in forward
+    encoded_layers,attention_probs = self.encoder(
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/src/model/model.py", line 287, in forward
+    hidden_states, attention_probs = layer_module(hidden_states, attention_mask)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/src/model/layer.py", line 167, in forward
+    attention_output, attention_probs = self.attention(hidden_states, attention_mask)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/src/model/layer.py", line 125, in forward
+    self_output,attention_probs = self.self(input_tensor, attention_mask)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/src/model/layer.py", line 88, in forward
+    attention_scores = attention_scores + attention_mask
+RuntimeError: The size of tensor a (87) must match the size of tensor b (78) at non-singleton dimension 3
+  0%|          | 0/20000 [00:07<?, ?it/s]
